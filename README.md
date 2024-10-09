@@ -1,4 +1,4 @@
-<h1>Projeto CadAcel</h1> <h2> Cadastro a Pessoa com Deficiência de Jaraguá do Sul</h2>
+<h1>Projeto CadAcel - Cadastro a Pessoa com Deficiência de Jaraguá do Sul</h1>
 </br>
 
 Figma: https://www.figma.com/design/wpIc5iv8qWAjrIOqmPkWUO/CadAcel?node-id=173-112&t=CjVhBp4TJ1eHfX3q-1
