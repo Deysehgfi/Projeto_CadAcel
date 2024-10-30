@@ -1,5 +1,7 @@
 import { DataTypes } from "sequelize";
 import conn from "../Config/Conn.js";
+import Usuario from "./usuariosModels.js";
+
 
 const Postagem = conn.define("Postagens", {
     id: {
@@ -13,8 +15,17 @@ const Postagem = conn.define("Postagens", {
         required: true
     },
     descricao: {
-        type: DataTypes.STRING, 
+        type: DataTypes.STRING,
         allowNull: false,
         required:true
-    }, 
+    },
+},{
+    tableName:'postagens'
 })
+
+
+Usuario.hasMany(Postagem,{foreignKey:'id_postagem'})
+Postagem.belongsTo(Usuario,{foreignKey:'id_usuario'})
+
+
+export default Postagem;

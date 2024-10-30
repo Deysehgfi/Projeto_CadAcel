@@ -36,11 +36,18 @@ const Usuario = conn.define("Usuarios", {
         required: true
     },
     dataNascimento: {
-        type: DataTypes.DATE,   
+        type: DataTypes.DATE,  
         allowNull: false,
         required: true
     },
     papel: {
     type: DataTypes.ENUM(["administrador", "user"]),
 }
+},{
+    tableName:'usuarios'
 })
+
+
+export default Usuario;
+
+
