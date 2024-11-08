@@ -26,4 +26,8 @@ align-items: center;
 export const ImgSection = styled.img`
 height: 710px;
 width: 710px;
+@media screen and (max-width:680px){
+width: 450px;
+height: 450px;
+   } 
 `

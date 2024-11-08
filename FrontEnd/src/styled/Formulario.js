@@ -29,6 +29,9 @@ gap: 30px;
 min-width: 450px;
 height: 400px;
 box-shadow: 0 4px 10px ${Cores.sombra};
+@media screen and (max-width:680px){
+min-width: 300px;
+   } 
 `
 
  
