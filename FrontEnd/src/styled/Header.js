@@ -18,11 +18,15 @@ width: 60px;
 height: 100vh;
 transition: .5s;
 position: fixed;
+z-index: 99999;
 padding-top: 20px;
 box-shadow: 10px 5px 10px ${Cores.sombra};
 &:hover{
     width: 300px;
 }
+@media screen and (max-width:500px){
+display: none;
+   } 
 `
 
 export const NavBar = styled.div`

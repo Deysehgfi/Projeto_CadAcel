@@ -1,11 +1,10 @@
 *{
     margin: 0;
     padding: 0;
-   
+    font-family: Arial, Helvetica, sans-serif; 
 }
 
 body{
-    cursor: pointer;
     background-image: url(./public/background.png) ;
     background-repeat: no-repeat;
    background-size: cover;

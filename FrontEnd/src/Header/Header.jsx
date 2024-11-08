@@ -11,21 +11,21 @@ const Header = () => {
         <>
             <HeaderNav>
                 <NavBar>
-                <IconPerfil src={person} alt="" />
+                <IconPerfil src={person} alt=""  />
                     <Divisao/>
                     <NavLinksBox>
-                        <IconsNav src={house} alt="" />
+                        <IconsNav src={house} alt="" tabIndex={1}/>
                         <NavLinks>Home</NavLinks>
                     </NavLinksBox>
 
                     <NavLinksBox>
-                        <IconsNav src={question} alt="" />
-                        <NavLinks>Sobre</NavLinks>
+                        <IconsNav src={question} alt="" tabIndex={2}/>
+                        <NavLinks >Sobre</NavLinks>
                     </NavLinksBox>
 
                     <NavLinksBox>
-                        <IconsNav src={pencil} alt="" />
-                        <NavLinks>Criar</NavLinks>
+                        <IconsNav src={pencil} alt="" tabIndex={3}/>
+                        <NavLinks >Criar</NavLinks>
                     </NavLinksBox>
                 </NavBar>
             </HeaderNav>
