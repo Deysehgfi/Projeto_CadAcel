@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-   
+    font-family: Arial, Helvetica, sans-serif; 
 }
 
 body{
@@ -17,3 +17,55 @@ body{
     color: aliceblue;
 }
 
+
+.input-fields {
+    position: relative;
+    width: 430px;
+    height: 40px;
+    margin-top: 30px;
+  }
+  
+  .input-fields input{
+    width: 100%;
+    height: 100%;
+    outline: 1.4px solid black;
+    border: none;
+    border-radius:  8px;
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+  
+  .input-fields input:focus{
+    outline: 2px solid #1f3040;
+  }
+  
+  .input-fields input:focus + label{
+    top: -10px;
+    color: #1f3040;
+  }
+  
+  .input-fields input:not(:placeholder-shown) + label{
+    top: -10px;
+    color: #1f3040;
+  }
+  
+  .input-fields label{
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    font-size: 18px;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: top .2s;
+    background-color: white;
+    color: black;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+
+.imgIConEmail{
+    height: 18px;
+    width: 18px;
+}

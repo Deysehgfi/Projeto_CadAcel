@@ -12,9 +12,12 @@ export const Cores = {
     sombra:"rgba(0, 0, 0, 0.25)"
 }
 
-
-export const InputStyle = styled.input`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    `
+export const SectionLogin = styled.section`
+display: flex;
+justify-content: center;
+align-items: center;
+`
+export const ImgSection = styled.img`
+height: 710px;
+width: 710px;
+`

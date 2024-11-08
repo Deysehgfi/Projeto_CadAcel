@@ -12,9 +12,12 @@ export const Cores = {
     sombra:"rgba(0, 0, 0, 0.25)"
 }
 
-
-export const InputStyle = styled.input`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    `
+export const Button = styled.button`
+color: ${Cores.Branco};
+ background-image: linear-gradient(to right,${Cores.AzulClaro}, ${Cores.Ciano}); 
+ border: 0;
+ border-radius: 15px;
+ box-shadow: 0 4px 4px ${Cores.sombra};
+ height: 50px;
+ width: 100px;
+`
