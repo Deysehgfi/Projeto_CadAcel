@@ -1,15 +1,13 @@
-import {InputStyle} from "../../styled/Input.js"
+import {InputStyle,InputFields, Label, ImgIcon} from "../../styled/Input.js"
 import "../../index.css"
 import iconEmail from "../../public/Email.svg"
 
-const Input = ({TipoInput, NomeInput, PlaceholderInput}) => {
+const Input = ({TipoInput, NomeInput, PlaceholderInput, NameLabel, IconImg}) => {
     return(
-        <>
-        <div className="input-fields">
-        <input type="email" placeholder="" required/>
-        <label> <img src={iconEmail} alt="" className="imgIConEmail" />  Email</label>
-        </div>
-        </>
+        <InputFields className="input-fields">
+        <InputStyle type="email" placeholder="" required/>
+        <Label> <ImgIcon src={IconImg} alt="" className="imgIConEmail" />{NameLabel}</Label>
+        </InputFields>
     )
 }
 

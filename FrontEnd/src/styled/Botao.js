@@ -17,7 +17,9 @@ color: ${Cores.Branco};
  background-image: linear-gradient(to right,${Cores.AzulClaro}, ${Cores.Ciano}); 
  border: 0;
  border-radius: 15px;
+ font-size: 18px;
  box-shadow: 0 4px 4px ${Cores.sombra};
  height: 50px;
- width: 100px;
+ width: 200px;
+ cursor: pointer;
 `

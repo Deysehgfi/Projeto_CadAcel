@@ -13,22 +13,25 @@ export const Cores = {
 }
 
 export const TituloForm = styled.h2`
-font-size: 48px;
+font-size: 40px;
+padding: 20px;
 color: ${Cores.AzulEscuro};
 `
 
 export const Form = styled.form`
 border-radius: 15px;
-padding: 20px;
+padding: 25px;
 background-color: ${Cores.Branco};
 display: flex;
 flex-direction: column;
-gap: 10px;
-height: 520px;
-width: 620px;
+align-items: center;
+gap: 30px;
+min-width: 450px;
+height: 400px;
+box-shadow: 0 4px 10px ${Cores.sombra};
 `
 
  
 export const LinkForm = styled.h5`
-
+color: ${Cores.AzulEscuro};
 `
