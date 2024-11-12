@@ -4,12 +4,18 @@ import { z } from 'zod'
 import formatZodError from '../Helpers/zodError.js'
 import bcrypt from 'bcrypt'
 import createUserToken from '../Helpers/create-user-token.js'
+import { response } from 'express'
 
 
 const createShema = z.object({
     nome: z.string().min(3, { message: "O usuário deve ter pelo menos 3 caracteres" }),
     email: z.string().email({ message: "Email inválido" }),
     senha: z.string().min(6, { message: "A senha deve ter pelo menos 6 caracteres" })
+})
+
+const loginSchema = z.object({
+    email: z.string().email({message: "Email inválido"}), 
+    senha: z.string().min(6, {message: "A senha deve conter pelo menos 6 caracteres"})
 })
 
 export const criarUsuario = async (request, response) => {
@@ -25,7 +31,7 @@ export const criarUsuario = async (request, response) => {
     const salt = bcrypt.genSaltSync(12);
     const senhaCrypt = bcrypt.hashSync(senha, salt);
 
-   const  novoUsuario = {
+    const  novoUsuario = {
         nome,
         email,
         senha: senhaCrypt,
@@ -50,5 +56,31 @@ export const criarUsuario = async (request, response) => {
     } catch (error) {
         console.error(error)
         response.status(500).json({ message: "Erro ao cadastrar Usuario" });
+    }
+}
+
+export const login = async( request, response)=>{
+    const loginValidation = loginSchema.safeParse(request.body);
+    if(!loginValidation.success){
+        return response.status(400).json({detalhes: formatZodError(loginValidation.error)});
+    }
+
+    const {email, senha} = loginValidation.data; 
+
+    try {
+        const usuario = await Usuario.findOne({where:{email}})
+        if(!usuario){
+        return response.status(404).json({err:"Usuário não encontrado"})
+        }
+        const comparaSenha = await bcrypt.compare(senha, usuario.senha);
+        if(!comparaSenha){
+            response.status(401).json({err:"Senha incorreta"})
+            return
+        }
+        await createUserToken(usuario, request, response)
+        response.status(200).json(usuario)
+    } catch (error) {
+        console.log(error)
+        response.status(500).json(console.error())
     }
 }
