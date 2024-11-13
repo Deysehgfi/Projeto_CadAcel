@@ -18,10 +18,6 @@ flex-direction: row;
 flex-wrap:wrap;
 justify-content: center;
 align-items: center;
-
-/* @media screen and (max-width:1100px){
-  flex-direction: column;
-   } */
 `
 export const ImgSection = styled.img`
 height: 710px;

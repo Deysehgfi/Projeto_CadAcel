@@ -22,4 +22,7 @@ color: ${Cores.Branco};
  height: 50px;
  width: 200px;
  cursor: pointer;
+ /* &:hover{
+   background-color: ${Cores.AzulEscuro};
+ } */
 `
