@@ -6,7 +6,6 @@ const Section01 = ({FormTitulo}) => {
         <SectionLogin>
             <ImgSection src={img01} alt="" />
             <Formulario FormTitulo="Login"/>
-
         </SectionLogin>
     )
 }

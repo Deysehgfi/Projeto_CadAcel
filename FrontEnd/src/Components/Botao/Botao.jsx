@@ -1,9 +1,9 @@
 import { Button } from "../../styled/Botao.js";
 
-const Botao = ({nomeBotao}) => {
+const Botao = ({nomeBotao, FuncaoBotao}) => {
     return(
         <>
-        <Button>{nomeBotao}</Button>
+        <Button onClick={(event) => FuncaoBotao(event)}>{nomeBotao}</Button>
         </>
     )
 }
