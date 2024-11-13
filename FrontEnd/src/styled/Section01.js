@@ -15,9 +15,9 @@ export const Cores = {
 export const SectionLogin = styled.section`
 display: flex;
 flex-direction: row;
-flex-wrap:wrap;
 justify-content: center;
 align-items: center;
+flex-wrap:wrap;
 `
 export const ImgSection = styled.img`
 height: 710px;

@@ -62,4 +62,8 @@ export const Img = styled.img`
 height: 400px;
 width: 400px;
 filter: drop-shadow(0px 4px 10px ${Cores.sombra});
+@media screen and (max-width:680px){
+width: 450px;
+height: 450px;
+   } 
 `
