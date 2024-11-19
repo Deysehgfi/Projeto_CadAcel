@@ -1,10 +1,15 @@
-import Home from "./Pages/Home.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login.jsx";
 
 
 const App = () => {
     return (
         <>
-        <Home/>
+           <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login/>} />
+      </Routes>
+    </BrowserRouter>
         </>
     )
 }
