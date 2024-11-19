@@ -18,7 +18,6 @@ flex-direction: row;
 flex-wrap:wrap;
 justify-content: space-around;
 align-items: center;
-padding: 20px;
 padding-top: 70px;
 padding-bottom: 70px;
 
@@ -34,9 +33,10 @@ align-items: center;
 gap: 60px;
 height: 400px;
 width: 550px;
-padding: 50px;
+padding: 20px;
 @media screen and (max-width:780px){
-min-width: 250px;
+min-width: 300px;
+height: 550px;
    } 
 `
 
@@ -47,7 +47,7 @@ text-align: justify;
 font-size: 20px;
 @media screen and (max-width:680px){
 font-size: 18px;
-width: 350px;
+width: 300px;
    } 
 `
 
@@ -63,7 +63,7 @@ height: 400px;
 width: 400px;
 filter: drop-shadow(0px 4px 10px ${Cores.sombra});
 @media screen and (max-width:680px){
-width: 450px;
-height: 450px;
+width: 300px;
+height: 300px;
    } 
 `
