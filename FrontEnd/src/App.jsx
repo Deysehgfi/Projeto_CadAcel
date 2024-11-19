@@ -1,17 +1,15 @@
-import Header from "./Header/Header.jsx";
-import "./index.css"
-import Section01 from "./Section01/Section01.jsx";
-import Section2 from "./Section02/Section02.jsx";
-import Footer from "./Footer/Footer.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login.jsx";
 
 
 const App = () => {
     return (
         <>
-        <Header/>
-        <Section01/>
-        <Section2/>
-        <Footer/>
+           <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login/>} />
+      </Routes>
+    </BrowserRouter>
         </>
     )
 }
