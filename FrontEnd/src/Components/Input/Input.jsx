@@ -2,10 +2,10 @@ import {InputStyle,InputFields, Label, ImgIcon} from "../../styled/Input.js"
 import "../../index.css"
 import iconEmail from "../../public/Email.svg"
 
-const Input = ({TipoInput, NomeInput, PlaceholderInput, NameLabel, IconImg}) => {
+const Input = ({TipoInput, NomeInput, PlaceholderInput, NameLabel, IconImg, tipoDeUseState}) => {
     return(
         <InputFields className="input-fields">
-        <InputStyle type="email" placeholder="" required/>
+        <InputStyle type={TipoInput} name={NomeInput} placeholder="" onChange={(event) => tipoDeUseState(event.target.value)} required/>
         <Label> <ImgIcon src={IconImg} alt="" className="imgIConEmail" />{NameLabel}</Label>
         </InputFields>
     )

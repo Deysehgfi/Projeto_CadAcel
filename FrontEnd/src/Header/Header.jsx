@@ -11,20 +11,20 @@ const Header = () => {
         <>
             <HeaderNav>
                 <NavBar>
-                <IconPerfil src={person} alt=""  />
+                <IconPerfil src={person} alt="Icon de perfil"  />
                     <Divisao/>
                     <NavLinksBox>
-                        <IconsNav src={house} alt="" tabIndex={1}/>
+                        <IconsNav src={house} alt="Icon de casa" tabIndex={1}/>
                         <NavLinks>Home</NavLinks>
                     </NavLinksBox>
 
                     <NavLinksBox>
-                        <IconsNav src={question} alt="" tabIndex={2}/>
+                        <IconsNav src={question} alt="Icon de interrogação" tabIndex={2}/>
                         <NavLinks >Sobre</NavLinks>
                     </NavLinksBox>
 
                     <NavLinksBox>
-                        <IconsNav src={pencil} alt="" tabIndex={3}/>
+                        <IconsNav src={pencil} alt="Icon de Lápis" tabIndex={3}/>
                         <NavLinks >Criar</NavLinks>
                     </NavLinksBox>
                 </NavBar>

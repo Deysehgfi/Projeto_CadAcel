@@ -14,14 +14,9 @@ export const Cores = {
 
 export const SectionLogin = styled.section`
 display: flex;
-flex-direction: row;
-flex-wrap:wrap;
 justify-content: center;
 align-items: center;
-
-/* @media screen and (max-width:1100px){
-  flex-direction: column;
-   } */
+flex-wrap:wrap;
 `
 export const ImgSection = styled.img`
 height: 710px;

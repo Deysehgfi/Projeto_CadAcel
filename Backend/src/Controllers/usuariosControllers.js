@@ -10,7 +10,7 @@ import { response } from 'express'
 const createShema = z.object({
     nome: z.string().min(3, { message: "O usuário deve ter pelo menos 3 caracteres" }),
     email: z.string().email({ message: "Email inválido" }),
-    senha: z.string().min(6, { message: "A senha deve ter pelo menos 6 caracteres" })
+    senha: z.string().min(6, { message: "A senha deve ter pelo menos 6 caracteres" }), 
 })
 
 const loginSchema = z.object({
@@ -25,7 +25,7 @@ export const criarUsuario = async (request, response) => {
         return
     }
 
-    const { nome, email, senha, telefone,deficiencia, dataNascimento } = request.body
+    const { nome, email, senha, telefone, deficiencia, dataNascimento } = request.body
     const papel = request.body.papel || "user";
 
     const salt = bcrypt.genSaltSync(12);
