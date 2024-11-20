@@ -45,7 +45,9 @@ export const IconsSocialMedia = styled.img`
 `
 
 export const Logo = styled.img`
-
+@media screen and (max-width:680px){
+width: 300px;
+   }
 `
 
 export const TodosDireitos = styled.h5`
