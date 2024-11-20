@@ -1,27 +1,34 @@
 
+import Input from "../Input/Input.jsx";
+import { Form, LinkForm, TituloForm, BOxTitulo } from "../../styled/Formulario.js";
+import Botao from "../Botao/Botao.jsx";
+import TituloIcon from "../../public/TituloIcon.svg"
+import LocalIcon from "../../public/Icon-localizacao.svg"
+import DescricaoIcon from "../../public/descricao.svg"
 
-const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao }) => {
+
+
+
+const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao }) => {
+
     return (
-                <Form>
-                    <TituloForm>{FormTitulo}</TituloForm>
-                    <Input NameLabel="Email"
-                        TipoInput="email"
-                        NomeInput="email"
-                        IconImg={emailIcon}
-                        tipoDeUseState={setEmail}
-                    />
-                    <Input NameLabel="Senha"
-                        TipoInput="senha"
-                        NomeInput="senha"
-                        IconImg={senhaIcon}
-                        tipoDeUseState={setSenha}
-                    />
-                    <p>{error}</p>
-                    <LinkForm>Não possui uma conta? <a href="">Cadastre-se</a></LinkForm>
-                    <Botao FuncaoBotao={handleLogin} nomeBotao="Entrar" />
-                </Form>
-    
+        <>
+            <Form>
+                <BOxTitulo>
+                    <TituloForm>Formulário</TituloForm>
+                    <h5>Faça sua suestão de melhoria</h5>
+                </BOxTitulo>
+                <Input TipoInput="text"
+                    NameLabel="Título" IconImg={TituloIcon} />
+                <Input TipoInput="select"
+                    NameLabel="Localização" IconImg={LocalIcon} />
+                <Input TipoInput="text"
+                    NameLabel="descricao" IconImg={DescricaoIcon} />
+
+                <Botao nomeBotao="Enviar" />
+            </Form>
+        </>
     )
 }
 
-export default Formulario;
+export default FormularioCreate;

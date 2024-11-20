@@ -38,3 +38,8 @@ min-width: 300px;
 export const LinkForm = styled.h5`
 color: ${Cores.AzulEscuro};
 `
+
+export const BOxTitulo = styled.div`
+text-align: center;
+gap: 10px;
+`

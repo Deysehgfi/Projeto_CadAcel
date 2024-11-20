@@ -8,10 +8,10 @@ import Footer from "../Footer/Footer.jsx";
 const Home = () => {
     return (
         <>
-        <Header/>
-        <Section01/>
-        <Section2/>
-        <Footer/>
+            <Header />
+            <Section01 />
+            <Section2 />
+            <Footer />
         </>
     )
 }
