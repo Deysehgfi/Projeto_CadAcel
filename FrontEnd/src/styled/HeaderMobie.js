@@ -16,6 +16,7 @@ export const NavHeader = styled.header`
 position: fixed; 
 left: 0;
 right: 0;
+bottom: 0;
 background-color: ${Cores.AzulMedio};
 height: 80px;
 display: none;
