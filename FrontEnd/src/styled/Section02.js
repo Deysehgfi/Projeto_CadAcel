@@ -18,10 +18,12 @@ flex-direction: row;
 flex-wrap:wrap;
 justify-content: space-around;
 align-items: center;
-padding-top: 70px;
-padding-bottom: 70px;
+padding-top: 100px;
+padding-bottom: 100px;
 
 `
+
+
 
 export const SobreContainer  = styled.div`
 background-color: ${Cores.Branco};
@@ -34,10 +36,14 @@ gap: 60px;
 height: 400px;
 width: 550px;
 padding: 20px;
+transition: .5s;
 @media screen and (max-width:780px){
 min-width: 300px;
 height: 550px;
    } 
+/* &:hover{
+   box-shadow: 0 4px 50px ${Cores.Preto};
+} */
 `
 
 export const Conteudo = styled.p`

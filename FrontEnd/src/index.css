@@ -16,3 +16,32 @@ body{
     color: aliceblue;
 }
 
+@keyframes scroll {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+.animation-scroll{
+    animation: scroll  linear ;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.svg-abrir{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.box{
+    background-color: blueviolet;
+    width: 100vw;
+    height: 100vh;
+}
