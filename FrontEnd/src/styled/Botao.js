@@ -14,12 +14,18 @@ export const Cores = {
 
 export const Button = styled.button`
 color: ${Cores.Branco};
- background-image: linear-gradient(to right,${Cores.AzulClaro}, ${Cores.Ciano}); 
+ background: linear-gradient(to right,${Cores.AzulClaro}, ${Cores.Ciano}); 
  border: 0;
- border-radius: 15px;
- font-size: 18px;
+ border-radius: 25px;
+ font-size: 20px;
  box-shadow: 0 4px 4px ${Cores.sombra};
  height: 50px;
  width: 200px;
+ font-weight: 600;
  cursor: pointer;
+ transition: 2s ease-in-out;
+ &:hover{
+  
+  background: linear-gradient(to right,${Cores.AzulClaro}, ${Cores.AzulEscuro}); 
+ }
 `

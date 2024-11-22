@@ -20,8 +20,9 @@ const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, F
                 </BOxTitulo>
                 <Input TipoInput="text"
                     NameLabel="Título" IconImg={TituloIcon} />
-                <Input TipoInput="select"
-                    NameLabel="Localização" IconImg={LocalIcon} />
+                <select name="localição" id="">
+                    <option value="">cidade 1</option>
+                </select>
                 <Input TipoInput="text"
                     NameLabel="descricao" IconImg={DescricaoIcon} />
 

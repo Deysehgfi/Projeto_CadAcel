@@ -18,7 +18,7 @@ const Card = ({tituloCard, iconCard, text, conteudo})=>{
       <ContainerCard>
         <IconCard src={iconCard} alt="Icone de cérebro" />
         <TituloCard>{tituloCard}</TituloCard>
-        <IoIosArrowDown className="svg-abrir" tabIndex={99} onClick={abrirCard} onKeyPress={handleKeyPress}/>
+        <IoIosArrowDown className="svg-abrir" tabIndex={6}  onClick={abrirCard} onKeyPress={handleKeyPress}/>
         {card && <CardOpen  text={conteudo} active={setcard} />}
       </ContainerCard>
     )

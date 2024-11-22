@@ -20,7 +20,7 @@ color: ${Cores.AzulEscuro};
 
 export const Form = styled.form`
 border-radius: 15px;
-padding: 25px;
+padding: 25px 35px;
 background-color: ${Cores.Branco};
 display: flex;
 flex-direction: column;
@@ -37,9 +37,18 @@ min-width: 300px;
  
 export const LinkForm = styled.h5`
 color: ${Cores.AzulEscuro};
+font-weight: 400;
+font-size: 15px;
 `
 
 export const BOxTitulo = styled.div`
 text-align: center;
 gap: 10px;
 `
+
+export const LinkCadastro = styled.a`
+font-family: Arial, Helvetica, sans-serif;
+color: ${Cores.AzulEscuro};
+font-weight:bold;
+`
+
