@@ -16,6 +16,7 @@ export const SectionSobre= styled.section`
 display: flex;
 flex-direction: row;
 flex-wrap:wrap;
+gap: 100px;
 justify-content: space-around;
 align-items: center;
 padding-top: 100px;
@@ -38,12 +39,9 @@ width: 550px;
 padding: 20px;
 transition: .5s;
 @media screen and (max-width:780px){
-min-width: 300px;
-height: 550px;
+width:300px;
+height: 600px;
    } 
-/* &:hover{
-   box-shadow: 0 4px 50px ${Cores.Preto};
-} */
 `
 
 export const Conteudo = styled.p`

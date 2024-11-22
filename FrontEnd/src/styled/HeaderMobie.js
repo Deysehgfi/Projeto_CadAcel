@@ -9,7 +9,7 @@ export const Cores = {
     Branco: "#ffffff",
     Preto: "#262626",
     cinza: "dddddd",
-    sombra:"rgba(0, 0, 0, 0.25)"
+    sombra: "rgba(0, 0, 0, 0.25)"
 }
 
 export const NavHeader = styled.header`

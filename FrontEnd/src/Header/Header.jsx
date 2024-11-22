@@ -14,17 +14,17 @@ const Header = () => {
                 <IconPerfil src={person} alt="Icon de perfil"  />
                     <Divisao/>
                     <NavLinksBox>
-                        <IconsNav src={house} alt="Icon de casa" tabIndex={1}/>
+                        <IconsNav src={house} alt="Icon de casa" />
                         <NavLinks>Home</NavLinks>
                     </NavLinksBox>
 
                     <NavLinksBox>
-                        <IconsNav src={question} alt="Icon de interrogação" tabIndex={2}/>
+                        <IconsNav src={question} alt="Icon de interrogação"/>
                         <NavLinks >Sobre</NavLinks>
                     </NavLinksBox>
 
                     <NavLinksBox>
-                        <IconsNav src={pencil} alt="Icon de Lápis" tabIndex={3}/>
+                        <IconsNav src={pencil} alt="Icon de Lápis"/>
                         <NavLinks >Criar</NavLinks>
                     </NavLinksBox>
                 </NavBar>

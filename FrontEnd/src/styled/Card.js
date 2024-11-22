@@ -23,6 +23,9 @@ gap: 20px;
 border-radius: 0 20px 0 20px;
 height: 110px;
 width: 500px;
+@media screen and (max-width:780px){
+    width: 300px;
+   }
 `
 export const ContainerCardOPen = styled.div`
 position: absolute;
@@ -37,16 +40,33 @@ gap: 20px;
 border-radius: 0 0px 0 20px;
 height: 250px;
 width: 500px;
+@media screen and (max-width:780px){
+    width: 300px;
+   }
 `
 
 export const TituloCard = styled.h2`
 font-family: Arial, Helvetica, sans-serif;
 color: ${Cores.AzulEscuro};
 font-size: 30px;
+@media screen and (max-width:780px){
+    font-size: 20px;
+   }
 `
 
 export const IconCard = styled.img`
-width: 80px;
-height: 80px;
+width: 70px;
+height: 70px;
+@media screen and (max-width:780px){
+    width: 50px;
+    height: 50px;
+   }
 `
-
+export const ConteudoCard = styled.p`
+color: ${Cores.AzulEscuro};
+padding: 30px;
+font-size: 23px;
+@media screen and (max-width:780px){
+   font-size: 18px;
+   }
+`
