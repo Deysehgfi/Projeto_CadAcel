@@ -26,3 +26,9 @@ width: 450px;
 height: 450px;
    } 
 `
+export const Logo = styled.img`
+padding: 50px 80px;
+@media screen and (max-width:680px){
+width: 250px;
+   }
+`

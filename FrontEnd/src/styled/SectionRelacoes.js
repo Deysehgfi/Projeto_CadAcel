@@ -24,7 +24,6 @@ padding-bottom: 100px;
 `
 export const ContainerCards = styled.div`
 display: flex;
-flex-direction: column;
 justify-content: center;
 flex-wrap: wrap;
 gap: 30px;
