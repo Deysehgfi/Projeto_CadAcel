@@ -2,13 +2,13 @@ import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Input from "../Input/Input.jsx";
-import { Form, LinkForm, TituloForm } from "../../styled/Formulario.js";
+import { Form, LinkForm, TituloForm ,LinkCadastro} from "../../styled/Formulario.js";
 import Botao from "../Botao/Botao.jsx";
 import emailIcon from "../../public/Email.svg"
 import senhaIcon from "../../public/Senha.svg"
 
 
-const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao }) => {
+const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao, Index, IndexBotao }) => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
@@ -43,20 +43,22 @@ const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTit
                 <Form>
                     <TituloForm>{FormTitulo}</TituloForm>
                     <Input NameLabel="Email"
+                        Index={1}
                         TipoInput="email"
                         NomeInput="email"
                         IconImg={emailIcon}
                         tipoDeUseState={setEmail}
                     />
                     <Input NameLabel="Senha"
+                        Index={2}
                         TipoInput="senha"
                         NomeInput="senha"
                         IconImg={senhaIcon}
                         tipoDeUseState={setSenha}
                     />
                     <p>{error}</p>
-                    <LinkForm>Não possui uma conta? <a href="">Cadastre-se</a></LinkForm>
-                    <Botao FuncaoBotao={handleLogin} nomeBotao="Entrar" />
+                    <LinkForm>Não possui uma conta? <LinkCadastro tabIndex={3} href="">Cadastre-se</LinkCadastro></LinkForm>
+                    <Botao IndexBotao={4} FuncaoBotao={handleLogin} nomeBotao="Entrar" />
                 </Form>
             ) : (
                 <div />

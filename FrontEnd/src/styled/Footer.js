@@ -15,8 +15,8 @@ export const Cores = {
 export const BackgroundFooter =  styled.div`
 background-color: ${Cores.AzulMedio};
 height: 250px;
-width: 100;
-padding: 15px;
+width: 100%;
+padding-top: 15px;
 display: flex;
 flex-direction: column;
 margin-top: 100px;
@@ -45,7 +45,9 @@ export const IconsSocialMedia = styled.img`
 `
 
 export const Logo = styled.img`
-
+@media screen and (max-width:680px){
+width: 250px;
+   }
 `
 
 export const TodosDireitos = styled.h5`
