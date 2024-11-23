@@ -4,7 +4,6 @@ import { z } from 'zod'
 import formatZodError from '../Helpers/zodError.js'
 import bcrypt from 'bcrypt'
 import createUserToken from '../Helpers/create-user-token.js'
-import { response } from 'express'
 
 
 const createShema = z.object({
@@ -27,7 +26,6 @@ export const criarUsuario = async (request, response) => {
 
     const { nome, email, senha, telefone, deficiencia, dataNascimento } = request.body
     const papel = request.body.papel || "user";
-
     const salt = bcrypt.genSaltSync(12);
     const senhaCrypt = bcrypt.hashSync(senha, salt);
 
@@ -52,7 +50,6 @@ export const criarUsuario = async (request, response) => {
             raw: true
         })
         await createUserToken(selecionaNovoUsuario, request, response)
-
     } catch (error) {
         console.error(error)
         response.status(500).json({ message: "Erro ao cadastrar Usuario" });
@@ -82,5 +79,37 @@ export const login = async( request, response)=>{
     } catch (error) {
         console.log(error)
         response.status(500).json(console.error())
+    }
+}
+
+export const getAll = async( request, response) => {
+    const page = parseInt(request.query.page) || 1
+
+    const limit = parseInt(request.query.limit) || 6
+
+    const offset = (page - 1) * limit
+    try {
+
+        const usuarios = await Usuario.findAndCountAll({
+            limit,
+            offset
+        })
+
+        const totalPaginas = Math.ceil(usuarios.count / limit)
+
+
+        response.status(200).json({
+            totalUsuarios: usuarios.count,
+            totalPaginas: totalPaginas,
+            paginaAtual: page,
+            itemsPorPages: limit,
+            proximaPag: totalPaginas === 0 ? null : `http://localhost:3333/usuarios?page=${page + 1}`,
+            Usuarios: usuarios.rows
+        })
+
+
+    } catch (err) {
+        console.error(err)
+        response.status(500).json({ message: "Erro ao listar usuários" })
     }
 }
