@@ -52,3 +52,24 @@ color: ${Cores.AzulEscuro};
 font-weight:bold;
 `
 
+export const Select = styled.select`
+    width: 105%;
+    outline: 1.4px solid black;
+    border: none;
+    border-radius:  8px;
+    padding: 13px 25px;
+    font-size: 18px;
+
+    /* &:focus{
+    outline: 2px solid #1f3040;
+  }
+  &:focus + label{
+    top: -10px;
+    color: #1f3040;
+  } */
+
+  /* &:not(:placeholder-shown) + label{
+    top: -10px;
+    color: #1f3040;
+  } */
+`
