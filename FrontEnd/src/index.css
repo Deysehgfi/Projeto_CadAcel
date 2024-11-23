@@ -1,50 +1,59 @@
-*{  
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background-image: url(./public/background.png) ;
+body {
+    background-image: url(./public/background.png);
     background-repeat: no-repeat;
-   background-size: cover;
+    background-size: cover;
 }
 
-.icons-Nav{
+.icons-Nav {
     width: 55px;
     height: 45px;
     color: aliceblue;
 }
 
 @keyframes scroll {
-    from{
+    from {
         opacity: 0;
         scale: 0.5;
     }
-    to{
+
+    to {
         opacity: 1;
         scale: 1;
     }
 }
 
 
-.animation-scroll{
-    animation: scroll  linear ;
+.animation-scroll {
+    animation: scroll linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
 }
 
-.svg-abrir{
+.svg-abrir {
     height: 40px;
     width: 40px;
     cursor: pointer;
 }
 
+.linksNav {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+    color: white;
+}
 
 
-@media screen and (max-width:780px){
-   body{
-    background-image: linear-gradient(to right, #84bfc3, #6e8db9); 
-    
-   }
-   }
+
+@media screen and (max-width:780px) {
+    body {
+        background-image: linear-gradient(to right, #84bfc3, #6e8db9);
+
+    }
+}

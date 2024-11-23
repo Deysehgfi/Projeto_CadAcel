@@ -1,6 +1,6 @@
 
 import Input from "../Input/Input.jsx";
-import { Form, LinkForm, TituloForm, BOxTitulo } from "../../styled/Formulario.js";
+import { Form, LinkForm, TituloForm, BOxTitulo ,Select} from "../../styled/Formulario.js";
 import Botao from "../Botao/Botao.jsx";
 import TituloIcon from "../../public/TituloIcon.svg"
 import LocalIcon from "../../public/Icon-localizacao.svg"
@@ -20,9 +20,11 @@ const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, F
                 </BOxTitulo>
                 <Input TipoInput="text"
                     NameLabel="Título" IconImg={TituloIcon} />
-                <select name="localição" id="">
-                    <option value="">cidade 1</option>
-                </select>
+                <Select name="localição" id="">
+                    <option value="">Localicação</option>
+                    <option value="">Cidade 01</option> 
+                    <option value="">Cidade 02</option>
+                </Select>
                 <Input TipoInput="text"
                     NameLabel="descricao" IconImg={DescricaoIcon} />
 

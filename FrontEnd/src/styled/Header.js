@@ -57,12 +57,7 @@ gap: 25px;
     background-color: ${Cores.AzulEscuro};
  }
 `
-export const NavLinks = styled.h1`
-font-size: 20px;
- font-family: Arial, Helvetica, sans-serif;
- font-weight: 400;
-color: ${Cores.Branco};
-`
+
 export const IconsNav = styled.img`
 width: 33px;
 height: 33px;
