@@ -9,7 +9,8 @@ export const Cores = {
     Branco: "#ffffff",
     Preto: "#262626",
     cinza: "dddddd",
-    sombra:"rgba(0, 0, 0, 0.25)"
+    sombra:"rgba(0, 0, 0, 0.25)",
+    sombraEscura: "rgba(6, 1, 39, 0.585)"
 }
 
 export const SectionSobre= styled.section`
@@ -38,6 +39,9 @@ height: 400px;
 width: 550px;
 padding: 20px;
 transition: .5s;
+&:hover{
+   box-shadow:0px 4px 20px ${Cores.sombraEscura};
+}
 @media screen and (max-width:780px){
 width:300px;
 height: 600px;
@@ -49,7 +53,7 @@ font-family: Arial, Helvetica, sans-serif;
 color: ${Cores.AzulEscuro};
 text-align: justify;
 font-size: 20px;
-@media screen and (max-width:680px){
+@media screen and (max-width:780px){
 font-size: 18px;
 width: 300px;
    } 
@@ -65,7 +69,11 @@ font-size: 48px;
 export const Img = styled.img`
 height: 400px;
 width: 400px;
+transition:0.5s;
 filter: drop-shadow(0px 4px 10px ${Cores.sombra});
+&:hover{
+   filter: drop-shadow(0px 4px 20px ${Cores.sombraEscura});
+}
 @media screen and (max-width:680px){
 width: 300px;
 height: 300px;

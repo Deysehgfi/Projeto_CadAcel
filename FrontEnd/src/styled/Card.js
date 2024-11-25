@@ -9,7 +9,8 @@ export const Cores = {
     Branco: "#ffffff",
     Preto: "#262626",
     cinza: "dddddd",
-    sombra: "rgba(0, 0, 0, 0.25)"
+    sombra: "rgba(0, 0, 0, 0.25)",
+    sombraEscura: "rgba(6, 1, 39, 0.585)"
 }
 
 export const ContainerCard = styled.div`
@@ -23,6 +24,10 @@ gap: 20px;
 border-radius: 0 20px 0 20px;
 height: 110px;
 width: 500px;
+transition: 0.5s;
+&:hover{
+    box-shadow: 0 4px 20px ${Cores.sombraEscura};
+}
 @media screen and (max-width:780px){
     width: 300px;
    }
