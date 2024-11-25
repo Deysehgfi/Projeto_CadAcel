@@ -19,8 +19,7 @@ justify-content: center;
 flex-wrap: wrap;
 gap: 30px;
 align-items: center;
-padding-top: 100px;
-padding-bottom: 100px;
+padding: 100px;
 `
 export const ContainerCards = styled.div`
 display: flex;
