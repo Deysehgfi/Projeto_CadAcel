@@ -9,7 +9,8 @@ export const Cores = {
     Branco: "#ffffff",
     Preto: "#262626",
     cinza: "dddddd",
-    sombra:"rgba(0, 0, 0, 0.25)"
+    sombra:"rgba(0, 0, 0, 0.25)",
+    vermelhoError: '#cc1818'
 }
 
 export const TituloForm = styled.h2`
@@ -99,4 +100,12 @@ font-weight: 400;
 `
 export const Option = styled.option`
 color: ${Cores.AzulEscuro};
+`
+
+export const Error = styled.p`
+color: ${Cores.vermelhoError};
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 500;
+display: flex;
+gap: 10px;
 `
