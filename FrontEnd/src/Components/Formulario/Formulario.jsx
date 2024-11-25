@@ -57,7 +57,7 @@ const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTit
                         tipoDeUseState={setSenha}
                     />
                     <p>{error}</p>
-                    <LinkForm>Não possui uma conta? <LinkCadastro tabIndex={3} href="">Cadastre-se</LinkCadastro></LinkForm>
+                    <LinkForm>Não possui uma conta? <LinkCadastro tabIndex={3} href="/Cadastro">Cadastre-se</LinkCadastro></LinkForm>
                     <Botao IndexBotao={4} FuncaoBotao={handleLogin} nomeBotao="Entrar" />
                 </Form>
             ) : (

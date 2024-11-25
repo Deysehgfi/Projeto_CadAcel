@@ -1,13 +1,11 @@
 
 import Input from "../Input/Input.jsx";
-import { Form, LinkForm, TituloForm, BOxTitulo ,Select} from "../../styled/Formulario.js";
+import { Form, LinkForm, TituloForm, BOxTitulo, Select, SelectFields, Label, SubTituloForm, Option} from "../../styled/Formulario.js";
 import Botao from "../Botao/Botao.jsx";
 import TituloIcon from "../../public/TituloIcon.svg"
 import LocalIcon from "../../public/Icon-localizacao.svg"
 import DescricaoIcon from "../../public/descricao.svg"
-
-
-
+import { ImgIcon } from "../../styled/Input.js";
 
 const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao }) => {
 
@@ -16,18 +14,20 @@ const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, F
             <Form>
                 <BOxTitulo>
                     <TituloForm>Formulário</TituloForm>
-                    <h5>Faça sua suestão de melhoria</h5>
+                    <SubTituloForm>Faça sua sugestão de melhoria</SubTituloForm>
                 </BOxTitulo>
                 <Input TipoInput="text"
                     NameLabel="Título" IconImg={TituloIcon} />
-                <Select name="localição" id="">
-                    <option value="">Localicação</option>
-                    <option value="">Cidade 01</option> 
-                    <option value="">Cidade 02</option>
-                </Select>
+                <SelectFields>
+                    <Select name="" id="">
+                        <Option value=""></Option>
+                        <Option value="">Cidade 01</Option>
+                        <Option value="">Cidade 02</Option>
+                    </Select>
+                    <Label> <ImgIcon src={LocalIcon} alt="" />localição</Label>
+                </SelectFields>
                 <Input TipoInput="text"
                     NameLabel="descricao" IconImg={DescricaoIcon} />
-
                 <Botao nomeBotao="Enviar" />
             </Form>
         </>

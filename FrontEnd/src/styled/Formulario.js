@@ -52,24 +52,51 @@ color: ${Cores.AzulEscuro};
 font-weight:bold;
 `
 
+export const SelectFields = styled.div`
+background-color: ${Cores.AzulEscuro};
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+
 export const Select = styled.select`
     width: 105%;
     outline: 1.4px solid black;
     border: none;
-    border-radius:  8px;
+    border-radius:8px;
     padding: 13px 25px;
     font-size: 18px;
+`
 
-    /* &:focus{
-    outline: 2px solid #1f3040;
-  }
-  &:focus + label{
-    top: -10px;
-    color: #1f3040;
-  } */
+export const Label = styled.label`
+    position: absolute;
+    top:-10px;
+    left: 5px;
+    font-size: 18px;
+    padding: 0 5px;
+    pointer-events: none;
+    background-color: ${Cores.Branco};
+    color: ${Cores.Preto};
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    `
 
-  /* &:not(:placeholder-shown) + label{
-    top: -10px;
-    color: #1f3040;
-  } */
+export const ImgIcon = styled.img`
+height: 18px;
+width: 18px;
+`
+
+export const SubTituloForm = styled.h5`
+font-size: 12px;
+color: ${Cores.AzulEscuro};
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 400;
+`
+export const Option = styled.option`
+color: ${Cores.AzulEscuro};
 `
