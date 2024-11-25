@@ -10,7 +10,7 @@ import DescricaoIcon from "../../public/descricao.svg"
 
 
 const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao }) => {
-
+    
     return (
         <>
             <Form>
