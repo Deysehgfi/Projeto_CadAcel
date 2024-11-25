@@ -40,6 +40,16 @@ gap: 20px;
 border-radius: 0 0px 0 20px;
 height: 250px;
 width: 500px;
+animation: opencard .4s;
+@keyframes opencard {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width:780px){
     width: 300px;
    }

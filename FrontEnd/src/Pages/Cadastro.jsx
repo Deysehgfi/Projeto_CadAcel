@@ -1,6 +1,6 @@
 import Input from "../Components/Input/Input.jsx";
 import Botao from "../Components/Botao/Botao.jsx";
-import { Form, LinkForm, TituloForm, BOxTitulo, Select, SectionCadastro, SelectFields, Label, ImgIcon, LinkCadastro, SubTituloForm,Option} from "../styled/Cadastro.js";
+import { LinkForm, TituloForm, BOxTitulo, Select, SectionCadastro, SelectFields, Label, ImgIcon, LinkCadastro, SubTituloForm, Option } from "../styled/Cadastro.js";
 import IconEmail from "../public/Email-Icon.svg"
 import Person from "../public/Group.svg"
 import IconSenha from "../public/Senha.svg"
@@ -8,13 +8,19 @@ import Icondata from "../public/DataNasc.svg"
 import Iconphone from "../public/Telephone.svg"
 import IconAnexo from "../public/Anexo.svg"
 import IconPrancheta from "../public/Prancheta.svg"
-
+import { motion } from "framer-motion"
 
 
 const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao }) => {
     return (
         <SectionCadastro>
-            <Form>
+            <motion.form className="form-design" initial={{ x: 100 }} initial={{ x: 100, opacity: 0 }} animate={{
+                x: 1, x: 0,
+                opacity: 1
+            }} transition={{
+                default: { type: "spring" },
+                opacity: { ease: "linear" }, duration: 2
+            }} >
                 <BOxTitulo>
                     <TituloForm>Cadastro</TituloForm>
                     <SubTituloForm>Seja bem-vindo!</SubTituloForm>
@@ -37,7 +43,7 @@ const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitul
                 <Input TipoInput="text" NameLabel="comprovante de deficiência" IconImg={IconAnexo} />
                 <LinkForm>Já possui uma conta? <LinkCadastro tabIndex={3} href="/">Login</LinkCadastro></LinkForm>
                 <Botao nomeBotao="Cadastrar" />
-            </Form>
+            </motion.form>
 
         </SectionCadastro>
     )

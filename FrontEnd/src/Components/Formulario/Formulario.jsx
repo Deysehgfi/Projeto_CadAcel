@@ -2,10 +2,12 @@ import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Input from "../Input/Input.jsx";
-import { Form, LinkForm, TituloForm ,LinkCadastro} from "../../styled/Formulario.js";
+import { Form, LinkForm, TituloForm ,LinkCadastro, Error} from "../../styled/Formulario.js";
 import Botao from "../Botao/Botao.jsx";
 import emailIcon from "../../public/Email.svg"
 import senhaIcon from "../../public/Senha.svg"
+import { motion } from "framer-motion"
+import { AiFillExclamationCircle } from "react-icons/ai";
 
 
 const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao, Index, IndexBotao }) => {
@@ -40,7 +42,13 @@ const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTit
     return (
         <div className="ConteinerForm">
             {user === null ? (
-                <Form>
+                <motion.form className="form-styled-login" initial={{ x: 100 }} initial={{ x: 100, opacity: 0 }} animate={{
+                    x: 1, x: 0,
+                    opacity: 1
+                }} transition={{
+                    default: { type: "spring" },
+                    opacity: { ease: "linear" }, duration: 2
+                }}>
                     <TituloForm>{FormTitulo}</TituloForm>
                     <Input NameLabel="Email"
                         Index={1}
@@ -56,10 +64,10 @@ const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTit
                         IconImg={senhaIcon}
                         tipoDeUseState={setSenha}
                     />
-                    <p>{error}</p>
+                    <Error>{error && <AiFillExclamationCircle></AiFillExclamationCircle>}{error}</Error>
                     <LinkForm>Não possui uma conta? <LinkCadastro tabIndex={3} href="/Cadastro">Cadastre-se</LinkCadastro></LinkForm>
                     <Botao IndexBotao={4} FuncaoBotao={handleLogin} nomeBotao="Entrar" />
-                </Form>
+                </motion.form>
             ) : (
                 <div />
             )}

@@ -18,14 +18,7 @@ justify-content: center;
 align-items: center;
 flex-wrap:wrap;
 `
-export const ImgSection = styled.img`
-height: 710px;
-width: 710px;
-@media screen and (max-width:680px){
-width: 450px;
-height: 450px;
-   } 
-`
+
 export const Logo = styled.img`
 padding: 50px 80px;
 width: 500px;
