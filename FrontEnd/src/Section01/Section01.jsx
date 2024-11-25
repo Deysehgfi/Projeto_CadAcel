@@ -3,7 +3,6 @@ import { SectionLogin, Logo } from "../styled/Section01.js";
 import img01 from "../public/img01.png"
 import logoCadAcel from "../public/Logo.png"
 import { motion } from "framer-motion"
-
 const Section01 = ({ FormTitulo }) => {
     return (
         <>
@@ -16,6 +15,7 @@ const Section01 = ({ FormTitulo }) => {
                     default: { type: "spring" },
                     opacity: { ease: "linear" }, duration: 2
                 }} />
+                
                 <Formulario FormTitulo="Login" />
             </SectionLogin>
         </>

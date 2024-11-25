@@ -2,7 +2,9 @@ import { ContainerCard, TituloCard, IconCard } from "../../styled/Card.js";
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import CardOpen from "./CardOpen.jsx";
-const Card = ({tituloCard, iconCard, text, conteudo})=>{
+
+
+const Card = ({tituloCard, iconCard, text, conteudo, active})=>{
     const [card, setcard] = useState(false)
 
     const abrirCard = () =>{ 
@@ -10,7 +12,7 @@ const Card = ({tituloCard, iconCard, text, conteudo})=>{
      }
 
      const handleKeyPress = (evento) => {
-      if(evento.key=== "Enter"){
+      if(evento.key === "Enter"){
         abrirCard()
       }
      }
