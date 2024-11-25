@@ -35,7 +35,7 @@ const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitul
                     <Label htmlFor=""><ImgIcon src={IconPrancheta} alt="" />  deficiência</Label>
                 </SelectFields>
                 <Input TipoInput="text" NameLabel="comprovante de deficiência" IconImg={IconAnexo} />
-                <LinkForm>Já possui uma conta? <LinkCadastro tabIndex={3} href="/Login">Login</LinkCadastro></LinkForm>
+                <LinkForm>Já possui uma conta? <LinkCadastro tabIndex={3} href="/">Login</LinkCadastro></LinkForm>
                 <Botao nomeBotao="Cadastrar" />
             </Form>
 
