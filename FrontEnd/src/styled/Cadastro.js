@@ -56,6 +56,10 @@ export const LinkCadastro = styled.a`
 font-family: Arial, Helvetica, sans-serif;
 color: ${Cores.AzulEscuro};
 font-weight:bold;
+transition: 0.5s;
+&:hover{
+    color: ${Cores.AzulMedio};
+}
 `
 
 export const SelectFields = styled.div`
