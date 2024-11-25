@@ -86,6 +86,12 @@ export const Select = styled.select`
     border-radius:8px;
     padding: 13px 25px;
     font-size: 18px;
+    outline: 1.4px solid black;
+
+    &:focus{
+    outline: 2px solid #1f3040;
+  }
+    
 `
 
 export const Label = styled.label`
