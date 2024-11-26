@@ -13,21 +13,22 @@ import IconAnexo from "../public/Anexo.svg"
 
 
 
-const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao }) => {
+const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, FuncaoBotao }) => {
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [data, setData] = useState("")
     const [number, setNumber] = useState("")
+    const [deficiencia, setDeficiencia] = useState("")
     const [error, setError] = useState(null)
     const [user, setUser] = useState(null);
     
-    const handleLogin = async (event) => {
+    const handleCadastro = async (event) => {
         event.preventDefault()
         try {
             const response = await axios.post(
                 "http://localhost:3333/usuarios/cadastro",
-                JSON.stringify({ nome, email, password, data, number}),
+                JSON.stringify({ nome, email, password, data, number, deficiencia}),
                 {
                     headers: { "Content-Type": "application/json" },
                 },
@@ -52,12 +53,12 @@ const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitul
             <BOxTitulo>
                 <TituloForm>Cadastro</TituloForm>
             </BOxTitulo>
-            <Input TipoInput="text" NameLabel="nome" IconImg={Person} tipoDeUseState={setNome}/>
-            <Input TipoInput="email" NameLabel="email"  IconImg={IconEmail} tipoDeUseState={setEmail}/>
-            <Input TipoInput="password" NameLabel="senha"  IconImg={IconSenha} tipoDeUseState={setPassword}/>
-            <Input TipoInput="data" NameLabel="data de nascimento"IconImg={Icondata} tipoDeUseState={setData}/>
-            <Input TipoInput="number" NameLabel="telefone" IconImg={Iconphone} tipoDeUseState={setNumber}/>
-            <Select name="" id="">
+            <Input TipoInput="text" NameLabel="nome" IconImg={Person} onChange={(event) => setNome(event.target.value)}/>
+            <Input TipoInput="email" NameLabel="email"  IconImg={IconEmail} onChange={(event) => setEmail(event.target.value)}/>
+            <Input TipoInput="password" NameLabel="senha"  IconImg={IconSenha} onChange={(event) => setPassword(event.target.value)}/>
+            <Input TipoInput="data" NameLabel="data de nascimento"IconImg={Icondata} onChange={(event) => setData(event.target.value)}/>
+            <Input TipoInput="number" NameLabel="telefone" IconImg={Iconphone} onChange={(event) => setNumber(event.target.value)}/>
+            <Select name="" id="" onChange={(event) => setDeficiencia(event.target.value)}>
                 <option value="">deficiência</option>
                 <option value="">Visual</option>
                 <option value="">Fisica</option>
@@ -66,7 +67,7 @@ const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitul
             </Select>
             <Input TipoInput="text" NameLabel="anexo do comprovante de deficiência"  IconImg={IconAnexo}/>
             {error}
-            <Botao nomeBotao="Cadastrar" onClick={(event) => handleLogin(event)} />
+            <Botao nomeBotao="Cadastrar" onClick={(event) => handleCadastro(event)} />
         </Form>
 
         </SectionCadastro>

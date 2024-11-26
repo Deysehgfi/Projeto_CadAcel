@@ -6,16 +6,20 @@ import { Form, LinkForm, TituloForm ,LinkCadastro} from "../../styled/Formulario
 import Botao from "../Botao/Botao.jsx";
 import emailIcon from "../../public/Email.svg"
 import senhaIcon from "../../public/Senha.svg"
+import { Link } from "react-router-dom";
 
 
-const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao, Index, IndexBotao }) => {
+const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao, Index, IndexBotao, TipoBotao}) => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
     const [user, setUser] = useState(null);
 
+    const navigate = useNavigate()
+
     const handleLogin = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
+
         try {
             const response = await axios.post(
                 "http://localhost:3333/usuarios/login",
@@ -25,7 +29,9 @@ const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTit
                 },
             );
             setUser(response.data)
-            return console.log(response.data)
+            navigate("/HomeAdm")
+            // return console.log(response.data)
+            
         } catch (error) {
             if (!error?.response) {
                 setError("Erro ao acessar o site");
@@ -47,18 +53,18 @@ const Formulario = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTit
                         TipoInput="email"
                         NomeInput="email"
                         IconImg={emailIcon}
-                        tipoDeUseState={setEmail}
+                        onChange={(event) => setEmail(event.target.value)}
                     />
                     <Input NameLabel="Senha"
                         Index={2}
                         TipoInput="senha"
                         NomeInput="senha"
                         IconImg={senhaIcon}
-                        tipoDeUseState={setSenha}
+                        onChange={(event) => setSenha(event.target.value)}
                     />
                     <p>{error}</p>
-                    <LinkForm>Não possui uma conta? <LinkCadastro tabIndex={3} href="">Cadastre-se</LinkCadastro></LinkForm>
-                    <Botao IndexBotao={4} FuncaoBotao={handleLogin} nomeBotao="Entrar" />
+                    <LinkForm>Não possui uma conta? <LinkCadastro tabIndex={3}>Cadastre-se</LinkCadastro></LinkForm>
+                    <Botao TipoBotao="submit" IndexBotao={4} onClick={(event) => handleLogin(event)} nomeBotao="Entrar" />
                 </Form>
             ) : (
                 <div />
