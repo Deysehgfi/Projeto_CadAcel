@@ -16,7 +16,7 @@ const CardMelhorias = ({nameUser, deficiencia, local, titulopostagem, datapostag
                 </InfoUsuario>
                 <InfoPostagem>
                     <TituloPostagem>{titulopostagem}</TituloPostagem>
-                    <DataPostagem>{datapostagem}</DataPostagem>
+                    <DataPostagem>Data de Envio: {datapostagem}</DataPostagem>
                     <DescricaoPostagem>{descricaopostagem}</DescricaoPostagem>
                 </InfoPostagem>
             </ConteudoCard>

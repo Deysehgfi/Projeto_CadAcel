@@ -1,9 +1,9 @@
 import { Button } from "../../styled/Botao.js";
 
-const Botao = ({nomeBotao, FuncaoBotao, IndexBotao}) => {
+const Botao = ({nomeBotao, FuncaoBotao, IndexBotao, TipoBotao}) => {
     return(
         <>
-        <Button tabIndex={IndexBotao} onClick={(event) => FuncaoBotao(event)}>{nomeBotao}</Button>
+        <Button type={TipoBotao} tabIndex={IndexBotao} >{nomeBotao}</Button>
         </>
     )
 }

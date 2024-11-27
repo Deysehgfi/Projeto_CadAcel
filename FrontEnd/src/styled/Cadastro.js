@@ -86,13 +86,34 @@ export const Select = styled.select`
     border-radius:8px;
     padding: 13px 25px;
     font-size: 18px;
+`
+
+
+
+
+export const InputStyle = styled.input`
+    width: 100%;
+    height: 100%;
+    outline: 1.4px solid black;
+    border: none;
+    border-radius:  8px;
+    padding: 5px 10px;
+    font-size: 18px;
     outline: 1.4px solid black;
 
     &:focus{
     outline: 2px solid #1f3040;
   }
-    
-`
+    `
+
+export const InputFields = styled.div`
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    `
 
 export const Label = styled.label`
     position: absolute;
@@ -101,6 +122,9 @@ export const Label = styled.label`
     font-size: 18px;
     padding: 0 5px;
     pointer-events: none;
+    transition: top .2s;
+    background-color: white;
+    color: black;
     background-color: ${Cores.Branco};
     color: ${Cores.Preto};
     display: flex;
