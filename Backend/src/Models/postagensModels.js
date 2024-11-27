@@ -19,6 +19,11 @@ const Postagem = conn.define("Postagens", {
         allowNull: false,
         required:true
     },
+    localizacao: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        required:true
+    },
 },{
     tableName:'postagens'
 })

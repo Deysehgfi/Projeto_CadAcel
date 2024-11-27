@@ -7,9 +7,11 @@ import conn from "./Config/Conn.js";
 
 // Models
 import usuarioModel from "./Models/usuariosModels.js";
+import postagensModels from "./Models/postagensModels.js"
 
 //Rotas
 import usuarioRouter from './Routes/usuariosRoutes.js'
+import postagensRouter from "./Routes/Postagens-Router.js"
 
 
 const PORT = process.env.PORT;
@@ -22,6 +24,7 @@ app.use(express.json());
 
 // rotas
 app.use('/usuarios', usuarioRouter)
+app.use('/postagens', postagensRouter)
 
 app.use((request, response) => {
   response.status(404).json({ message: "Rota não encontrada" });
