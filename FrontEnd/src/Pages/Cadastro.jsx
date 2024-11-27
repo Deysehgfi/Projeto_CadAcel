@@ -4,11 +4,15 @@ import Input from "../Components/Input/Input.jsx"
 import Botao from "../Components/Botao/Botao.jsx";
 import { Form, LinkForm, TituloForm, BOxTitulo, Select, SectionCadastro } from "../styled/Cadastro.js";
 import { InputStyle, InputFields, Label, ImgIcon } from "../styled/Input.js"
+import { LinkForm, TituloForm, BOxTitulo, Select, SectionCadastro, SelectFields, Label, ImgIcon, LinkCadastro, SubTituloForm, Option } from "../styled/Cadastro.js";
 import IconEmail from "../public/Email-Icon.svg"
 import Person from "../public/Group.svg"
 import IconSenha from "../public/Senha.svg"
 import Icondata from "../public/DataNasc.svg"
 import Iconphone from "../public/Telephone.svg"
+import IconAnexo from "../public/Anexo.svg"
+import IconPrancheta from "../public/Prancheta.svg"
+import { motion } from "framer-motion"
 
 
 
@@ -54,7 +58,13 @@ const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitul
     return (
         <>
             <SectionCadastro>
-                <Form onSubmit={handleCadastro}>
+                <motion.form className="form-design" initial={{ x: 100, opacity: 0 }} animate={{
+                x: 1, x: 0,
+                opacity: 1
+            }} transition={{
+                default: { type: "spring" },
+                opacity: { ease: "linear" }, duration: 2
+            }}   onSubmit={handleCadastro}>
                     <BOxTitulo>
                         <TituloForm>Cadastro</TituloForm>
                     </BOxTitulo>
@@ -96,8 +106,7 @@ const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitul
                     </Select>
                     <p>{error}</p>
                     <Botao nomeBotao="Cadastrar" TipoBotao="submit" />
-                </Form>
-
+                </motion.form>
             </SectionCadastro>
         </>
     )

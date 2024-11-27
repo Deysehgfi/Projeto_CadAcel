@@ -20,7 +20,10 @@ width: 600px;
 height: 400px;
 border-radius: 20px;
 box-shadow: 0 4px 4px ${Cores.sombra};
-
+@media screen and (max-width:780px){
+    width: 300px;
+    height: 550px;
+   }
 `
 
 

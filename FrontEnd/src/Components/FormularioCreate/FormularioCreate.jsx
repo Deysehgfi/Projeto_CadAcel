@@ -1,6 +1,11 @@
 
 import { Form, LinkForm, TituloForm, BOxTitulo, Select } from "../../styled/Formulario.js";
 import { InputStyle, InputFields, Label, ImgIcon } from "../../styled/Input.js"
+import Input from "../Input/Input.jsx";
+import { ImgIcon } from "../../styled/Input.js";
+import { motion } from "framer-motion"
+import { Form, LinkForm, TituloForm, BOxTitulo, Select, SelectFields, Label, SubTituloForm, Option } from "../../styled/Formulario.js";
+
 import Botao from "../Botao/Botao.jsx";
 import TituloIcon from "../../public/TituloIcon.svg"
 import LocalIcon from "../../public/Icon-localizacao.svg"
@@ -18,6 +23,7 @@ const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, F
     const [user, setUser] = useState(null);
 
     const navigate = useNavigate()
+
 
     const handleCriarForm = async (event) => {
         event.preventDefault();
@@ -48,11 +54,13 @@ const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, F
 
     return (
         <>
-            <Form onSubmit={handleCriarForm}>
-                <BOxTitulo>
-                    <TituloForm>Formulário</TituloForm>
-                    <h5>Faça sua suestão de melhoria</h5>
-                </BOxTitulo>
+            <motion.form  onSubmit={handleCriarForm} className="form-styled-login" initial={{ x: 100, opacity: 0 }} animate={{
+                x: 1, x: 0,
+                opacity: 1
+            }} transition={{
+                default: { type: "spring" },
+                opacity: { ease: "linear" }, duration: 2
+            }} >
                 <InputFields className="input-fields">
                         <InputStyle type="text" value={titulo} onChange={(event) => setTitulo(event.target.value)} placeholder="" required />
                         <Label> <ImgIcon src={TituloIcon} alt="" className="imgIConEmail" />titulo</Label>
@@ -63,13 +71,14 @@ const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, F
                     <option>Cidade 01</option>
                     <option>Cidade 02</option>
                 </Select>
+
                 <InputFields className="input-fields">
                         <InputStyle type="text" value={descricao} onChange={(event) => setDescrica(event.target.value)} placeholder="" required />
                         <Label> <ImgIcon src={DescricaoIcon} alt="" className="imgIConEmail" />descricao</Label>
                     </InputFields>
                     <p>{error}</p>
                 <Botao nomeBotao="Criar" TipoBotao="submit" />
-            </Form>
+            </motion.form>
         </>
     )
 }

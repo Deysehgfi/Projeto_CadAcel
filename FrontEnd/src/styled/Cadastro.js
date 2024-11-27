@@ -33,7 +33,7 @@ flex-direction: column;
 align-items: center;
 gap: 30px;
 min-width: 450px;
-height: 700px;
+height: 750px;
 box-shadow: 0 4px 10px ${Cores.sombra};
 @media screen and (max-width:680px){
 min-width: 300px;
@@ -56,13 +56,34 @@ export const LinkCadastro = styled.a`
 font-family: Arial, Helvetica, sans-serif;
 color: ${Cores.AzulEscuro};
 font-weight:bold;
+transition: 0.5s;
+&:hover{
+    color: ${Cores.AzulMedio};
+}
+`
+
+export const SelectFields = styled.div`
+background-color: ${Cores.AzulEscuro};
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+export const SubTituloForm = styled.h5`
+font-size: 12px;
+color: ${Cores.AzulEscuro};
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 400;
 `
 
 export const Select = styled.select`
     width: 105%;
     outline: 1.4px solid black;
     border: none;
-    border-radius:  8px;
+    border-radius:8px;
     padding: 13px 25px;
     font-size: 18px;
 `
@@ -78,18 +99,10 @@ export const InputStyle = styled.input`
     border-radius:  8px;
     padding: 5px 10px;
     font-size: 18px;
+    outline: 1.4px solid black;
 
     &:focus{
     outline: 2px solid #1f3040;
-  }
-  &:focus + label{
-    top: -10px;
-    color: #1f3040;
-  }
-
-  &:not(:placeholder-shown) + label{
-    top: -10px;
-    color: #1f3040;
   }
     `
 
@@ -104,7 +117,7 @@ export const InputFields = styled.div`
 
 export const Label = styled.label`
     position: absolute;
-    top: 15px;
+    top:-10px;
     left: 5px;
     font-size: 18px;
     padding: 0 5px;
@@ -112,6 +125,8 @@ export const Label = styled.label`
     transition: top .2s;
     background-color: white;
     color: black;
+    background-color: ${Cores.Branco};
+    color: ${Cores.Preto};
     display: flex;
     gap: 5px;
     align-items: center;
@@ -120,4 +135,8 @@ export const Label = styled.label`
 export const ImgIcon = styled.img`
 height: 18px;
 width: 18px;
+`
+
+export const Option = styled.option`
+color: ${Cores.AzulEscuro};
 `
