@@ -14,12 +14,10 @@ import { motion } from "framer-motion"
 const Cadastro = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao }) => {
     return (
         <SectionCadastro>
-            <motion.form className="form-design" initial={{ x: 100 }} initial={{ x: 100, opacity: 0 }} animate={{
-                x: 1, x: 0,
+            <motion.form className="form-design"  initial={{ x:0, opacity: 0 }} animate={{
                 opacity: 1
             }} transition={{
-                default: { type: "spring" },
-                opacity: { ease: "linear" }, duration: 2
+                default: { type: "spring" }, duration: 2
             }} >
                 <BOxTitulo>
                     <TituloForm>Cadastro</TituloForm>

@@ -20,6 +20,10 @@ flex-wrap: wrap;
 gap: 30px;
 align-items: center;
 padding: 100px;
+@media screen and (max-width:680px){
+padding: 0;
+padding-top: 100px;
+   } 
 `
 export const ContainerCards = styled.div`
 display: flex;
