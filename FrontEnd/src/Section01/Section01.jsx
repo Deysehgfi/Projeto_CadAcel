@@ -9,13 +9,13 @@ const Section01 = ({ FormTitulo }) => {
         <>
             <Logo src={logoCadAcel} alt="Logo do site" />
             <SectionLogin>
-                <motion.img className="img-Setion01" src={img01} alt="Ilustração com um cadeirante e um mulher deficiênte física" initial={{ x: 100 }} initial={{ x: -100, opacity: 0 }} animate={{
+                <motion.img  initial={{x: 100 }} animate={{
                     x: 1, x: 0,
                     opacity: 1
                 }} transition={{
                     default: { type: "spring" },
                     opacity: { ease: "linear" }, duration: 2
-                }} />
+                }} className="img-Setion01" src={img01} alt="Ilustração com um cadeirante e um mulher deficiênte física" />
                 <Formulario FormTitulo="Login" />
             </SectionLogin>
         </>

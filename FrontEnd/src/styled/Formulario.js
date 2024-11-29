@@ -112,19 +112,9 @@ export const InputFields = styled.div`
     align-items: center;
     `
 
-export const Label = styled.label`
+export const LabelSelect = styled.label`
     position: absolute;
-    top: 15px;
-    outline: 1.4px solid black;
-
-    &:focus{
-    outline: 2px solid #1f3040;
-  }
-`
-
-export const Label = styled.label`
-    position: absolute;
-    top:-10px;
+    top: -15px;
     left: 5px;
     font-size: 18px;
     padding: 0 5px;
@@ -132,12 +122,11 @@ export const Label = styled.label`
     transition: top .2s;
     background-color: white;
     color: black;
-    background-color: ${Cores.Branco};
-    color: ${Cores.Preto};
     display: flex;
     gap: 5px;
     align-items: center;
-    `
+`
+
 
 export const ImgIcon = styled.img`
 height: 18px;

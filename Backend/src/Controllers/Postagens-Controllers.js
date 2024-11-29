@@ -5,8 +5,8 @@ import formatZodError from '../Helpers/zodError.js'
 
 const createShema = z.object({
     titulo: z.string().min(3, { message: "O Titulo deve ter pelo menos 3 caracteres" }),
-    descricao: z.string().min(2 ,{ message: "A senha deve ter pelo menos 2 caracteres" }),
-    localizacao: z.string().min(6, { message: "A senha deve ter pelo menos 6 caracteres" }), 
+    descricao: z.string().min(2 ,{ message: "A descrição deve ter pelo menos 2 caracteres" }),
+    localizacao: z.string().min(3, { message: "A localizacao deve ter pelo menos 6 caracteres" }), 
 })
 
 

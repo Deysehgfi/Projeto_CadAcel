@@ -29,15 +29,16 @@ const SectionRelacoes = ({ nameUser, deficiencia, local, titulopostagem, datapos
     return (
         <SectionRElacoes>
             <TituloSection>Sugestões e melhorias</TituloSection>
-            <ContainerCards>{postagens.map((postagem, index) => (
-                 <CardMelhorias 
-                 nameUser="Pessoa"
-                  deficiencia="Visual"
-                   local={postagem.localizacao}
-                    titulopostagem={postagem.titulo}
-                     datapostagem={postagem.createdAt}
-                      descricaopostagem={postagem.descricao} />
-                       ))}
+            <ContainerCards>{postagens.map((postagem, index) => ( 
+                <CardMelhorias key={index} 
+                nameUser="Pessoa"
+                deficiencia="Visual"
+                local={postagem.localizacao}
+                titulopostagem={postagem.titulo}
+                datapostagem={postagem.createdAt}
+                descricaopostagem={postagem.descricao} /> 
+                )
+                )}
            </ContainerCards>
         
         </SectionRElacoes>

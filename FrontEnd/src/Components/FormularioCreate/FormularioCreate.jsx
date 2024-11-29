@@ -1,24 +1,24 @@
 
-import { Form, LinkForm, TituloForm, BOxTitulo, Select } from "../../styled/Formulario.js";
-import { InputStyle, InputFields, Label, ImgIcon } from "../../styled/Input.js"
-import Input from "../Input/Input.jsx";
-import { ImgIcon } from "../../styled/Input.js";
-import { motion } from "framer-motion"
-import { Form, LinkForm, TituloForm, BOxTitulo, Select, SelectFields, Label, SubTituloForm, Option } from "../../styled/Formulario.js";
+import { InputStyle, InputFields, ImgIcon, Label} from "../../styled/Input.js"
+
+import { Form, TituloForm, SelectFields, LabelSelect} from "../../styled/Formulario.js"
+// import { motion } from "framer-motion"
+import { Select } from "../../styled/Formulario.js";
+
+import { useState } from "react"
+import { useNavigate } from "react-router"
+import axios from "axios"
 
 import Botao from "../Botao/Botao.jsx";
 import TituloIcon from "../../public/TituloIcon.svg"
 import LocalIcon from "../../public/Icon-localizacao.svg"
 import DescricaoIcon from "../../public/descricao.svg"
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-import axios from "axios";
 
-const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, FormTitulo, NameLabel, IconImg, tipoDeUseState, FuncaoBotao }) => {
+const FormularioCreate = ({FormTitulo, nomeBotao, TipoBotao})=>{
     const [titulo, setTitulo] = useState("")
     const [localizacao, setLocalizacao] = useState("")
-    const [descricao, setDescrica] = useState("")
+    const [descricao, setDescricao] = useState("")
     const [error, setError] = useState(null)
     const [user, setUser] = useState(null);
 
@@ -40,7 +40,7 @@ const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, F
 
            
         } catch (error) {
-            if (error?.response) {
+            if (!error.response) {
                 setError("Erro ao acessar o site");
             } else if (error.response.status === 401) {
                 setError("Error ao criar formulario",);
@@ -52,33 +52,32 @@ const FormularioCreate = ({ TipoInput, NomeInput, PlaceholderInput, nomeBotao, F
         console.log("localiacao->", localizacao)
     }
 
-    return (
+    return(
         <>
-            <motion.form  onSubmit={handleCriarForm} className="form-styled-login" initial={{ x: 100, opacity: 0 }} animate={{
-                x: 1, x: 0,
-                opacity: 1
-            }} transition={{
-                default: { type: "spring" },
-                opacity: { ease: "linear" }, duration: 2
-            }} >
-                <InputFields className="input-fields">
-                        <InputStyle type="text" value={titulo} onChange={(event) => setTitulo(event.target.value)} placeholder="" required />
-                        <Label> <ImgIcon src={TituloIcon} alt="" className="imgIConEmail" />titulo</Label>
-                    </InputFields>
+        <Form onSubmit={handleCriarForm}>
+            <TituloForm>Criar formulário</TituloForm>
 
-                <Select name="localização" value={localizacao} onChange={(event) => setLocalizacao(event.target.value)} >
-                    <option>Localicação</option>
-                    <option>Cidade 01</option>
-                    <option>Cidade 02</option>
-                </Select>
+            <InputFields className="input-fields">
+        <InputStyle value={titulo} type="text" onChange={(event) => setTitulo(event.target.value)} placeholder=""  required/>
+        <Label> <ImgIcon src={TituloIcon} alt="" className="imgIConEmail" />Titulo</Label>
+        </InputFields>
 
-                <InputFields className="input-fields">
-                        <InputStyle type="text" value={descricao} onChange={(event) => setDescrica(event.target.value)} placeholder="" required />
-                        <Label> <ImgIcon src={DescricaoIcon} alt="" className="imgIConEmail" />descricao</Label>
-                    </InputFields>
-                    <p>{error}</p>
-                <Botao nomeBotao="Criar" TipoBotao="submit" />
-            </motion.form>
+
+<SelectFields>
+<Select value={localizacao}  onChange={(event) => setLocalizacao(event.target.value)} >
+            <option>Cidade 01</option>
+            <option>Cidade 02</option>
+        </Select>
+        <LabelSelect> <ImgIcon src={LocalIcon} alt="" className="imgIConEmail" />Localização</LabelSelect>
+</SelectFields>
+      
+        <InputFields className="input-fields">
+        <InputStyle value={descricao} type="text" onChange={(event) => setDescricao(event.target.value)} placeholder=""  required/>
+        <Label> <ImgIcon src={DescricaoIcon} alt="" className="imgIConEmail" />Descrição</Label>
+        </InputFields>
+        <p>{error}</p>
+        <Botao nomeBotao="Criar" TipoBotao="submit" />
+        </Form>
         </>
     )
 }

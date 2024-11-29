@@ -47,7 +47,7 @@ export const InputFields = styled.div`
 
 export const Label = styled.label`
     position: absolute;
-    top: 15px;
+    top: 10px;
     left: 5px;
     font-size: 18px;
     padding: 0 5px;
